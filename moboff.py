@@ -78,6 +78,7 @@ def download(link, newdevice, video, delete):
                            "--output",
                            "%(artist)s - %(title)s.%(ext)s",
                            link]
+        click.secho("Downloading video file.", fg="green", bold=True)
     else:
         downloadcommand = ["youtube-dl",
                            "--metadata-from-title",
@@ -91,6 +92,7 @@ def download(link, newdevice, video, delete):
                            "--output",
                            "%(artist)s - %(title)s.%(ext)s",
                            link]
+        click.secho("Downloading audio file.", fg="green", bold=True)
 
     try:
         subprocess.check_output(downloadcommand, stderr=subprocess.STDOUT)
